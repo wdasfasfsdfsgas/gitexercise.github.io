@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            
+        </title>
+        <script src="../vue.js"></script>
+    </head>
+<body>
+<div id="app">
+    <input typ="text" v-fource="true">
+ 
+
+</div>
+<script>
+    Vue.directive('fource',{
+       inserted(el,binding){
+           if(binding.value)
+           el.focus()
+       }
+
+    })
+    var vm=new Vue({
+    el:"#app",
+    data:{
+       
+    }
+
+
+    })
+</script>
+
+</body>
+</html>

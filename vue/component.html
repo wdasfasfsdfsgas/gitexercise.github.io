@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            component
+        </title>
+        <script src="../vue.js"></script>
+    </head>
+<body>
+<div id="app">
+    <my-Component></my-component>
+        <my-Component></my-component>
+            <my-Component></my-component>
+                <my-Component></my-component>
+                    <my-Component></my-component>
+                        <my-Component></my-component>
+ 
+
+</div>
+<script>
+    Vue.component('my-component',{
+    data(){
+        return{
+            count:0
+           
+        }
+    },<!--这里的template是字符串的形式，由于字符串中也有字符串，所以最外围的标点符号用的是''，而最里面的标点符号用的是""这种形式否则会报出-->
+    template: "<button v-on:click="count++">被单击{{count}}</button>"
+    })
+    var vm=new Vue({
+        el:"#app",
+    data:{
+        
+    }
+
+    })
+</script>
+
+</body>
+</html>

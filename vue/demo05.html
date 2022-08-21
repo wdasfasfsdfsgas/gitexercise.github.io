@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            demo05
+        </title>
+        <script src="../vue.js"></script>
+    </head>
+<body>
+<div id="app">
+    {{num}}
+    <hr>
+<button @click="num++">+</button>
+<button @click="num--">-</button>
+
+</div>
+<script>
+    var vm=new Vue({
+    el:"#app",
+    data:{
+        num:0
+    }
+
+
+    })
+</script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>
+            
+        </title>
+        <script src="../vue.js"></script>
+    </head>
+<body>
+<div id="app">
+    <table>
+<tr>
+    <th>id</th>
+    <th>name</th>
+</tr>
+<tr v-for="a in list">
+<td>{{a.id}}</td>
+<td>{{a.name}}</td>
+
+</tr>
+
+
+
+    </table>
+        
+    
+</div>
+<script>
+    var vm=new Vue({
+    el:"#app",
+    data:{
+       list:[
+{name:'sa',id:0},
+{name:'sdad',id:1},
+{name:'sf',id:2}
+
+
+       ]
+    }
+
+
+    })
+</script>
+
+</body>
+</html>

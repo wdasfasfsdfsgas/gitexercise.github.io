@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+vue
+        </title>
+       <style>
+           input[
+               type="text"
+           ]{
+               border-radius: 6px,6px;
+               border:3px;
+               border-style: double;
+           }
+
+
+       </style>
+        <meta charset="utf-8">
+        <script src="./vue.js"></script>
+    </head>
+<body>
+<div id="app">
+    <font size="6px" family="微软雅黑" color="blue"><strong>品牌</strong></font>&nbsp&nbsp<input type="text" placeholder="请输入你的品牌" v-model="name">
+
+<button @click="increase" >添加</button>
+<table border="1" width="50%" style="border-collapse: collapse">
+<tr>
+    <th>品牌</th>
+    
+    <th>添加时间</th>
+    <th>操作</th>
+</tr>
+<tr align="center" v-for="(item,i) in brands">
+    <td>{{item.name}}</td>
+    <td>{{item.date}}</td>
+    <td ><a href="#" @click.prevent="del(i)" style="cursor: pointer;">删除</ a></td>
+</tr>
+  
+
+</table>
+
+
+
+
+
+</div>
+<script>
+
+var vm=new Vue({
+el:"#app",
+data:{
+   name:"",
+   brands:[
+    
+       
+   ],
+
+},
+methods:{
+    increase(e){
+            
+            var date=new Date()
+            
+            var brand={ name:this.name, date:date.getFullYear()+"-"+date.getMonth()+1+"-"+date.getHours()+"-"+date.getMinutes()+"-"+date.getSeconds()}
+            this.brands.push(brand)
+            console.log(e)
+        
+    },
+    del(i){
+         this.brands.splice(i,1);
+<!--in在js中是关键字-->
+
+
+
+    
+},
+
+
+
+
+}
+})
+
+</script>
+</body>
+</html>
